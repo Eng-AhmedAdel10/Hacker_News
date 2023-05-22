@@ -1,0 +1,179 @@
+/* *******************public style**************** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #324d67;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f5f8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* *****************main******************** */
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+.container {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+/* *********************title******************** */
+.title {
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+@media (max-width: 767px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* *********************search-form******************** */
+.search-form {
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 600px;
+}
+.search-input {
+  background-color: transparent;
+  padding: 1rem 0.5rem;
+  border: none;
+  border-bottom: 3px solid #bcccdc;
+  text-transform: uppercase;
+  color: var(--main-color);
+  letter-spacing: 0.1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* *********************btns-container******************** */
+.btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.btns-container .btn {
+  padding: 0.25rem 0.5rem;
+  background-color: #49a6e9;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 0.85rem;
+}
+.btns-container .btn.block {
+  cursor: not-allowed;
+}
+.num-of-page {
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+/* *********************result******************** */
+.item {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+.item h3 {
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+.item p {
+  margin-bottom: 0.5rem;
+  color: #617d98;
+}
+.read-more {
+  margin-right: 1rem;
+  color: #49a6e9;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.remove-btn {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: #bb2525;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+@media (min-width: 991px) {
+  .result {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    flex-basis: 49%;
+  }
+  .item:nth-child(odd) {
+    margin-right: 1rem;
+  }
+}
+
+/* *********************loading******************** */
+.loading {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading:after {
+  content: ' ';
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #49a6e9;
+  border-color: #49a6e9 transparent #49a6e9 transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
